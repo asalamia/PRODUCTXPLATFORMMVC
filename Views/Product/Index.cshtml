@@ -1,0 +1,134 @@
+﻿@model IEnumerable<ProductList>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+
+            .topnav {
+                overflow: hidden;
+                background-color: white;
+                border-style: none;
+                font-size:medium;
+
+            }
+            .topnavcopy{
+                padding: 20px;
+                background-color: darkblue;
+                color: white;
+                border-style: solid;
+                font-family: 'Times New Roman';
+                font-size: 14px;
+                border-radius: 10px;
+            }
+
+            .letter{
+            color: white;
+            }
+
+                .topnav a {
+                    float: left;
+                    color: #f2f2f2;
+                    text-align: center;
+                    padding: 14px 16px;
+                    text-decoration: none;
+                    font-size: 17px;
+                    
+                }
+
+                    .topnav a:hover {
+                        background-color: #ddd;
+                        color: white;
+                    }
+
+                    .topnav a.active {
+                        background-color: #04AA6D;
+                        color: white;
+                    }
+
+            .topnav-right {
+                float: right;
+            }
+        </style>
+ </head>      
+
+<body>
+    <div class="topnav">
+        <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home ></a>
+        <a class="nav-link text-dark" asp-controller="Product" asp-action="Index">PRODUCT LIST ></a>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <div class="topnavcopy">
+                    SORT: # <a class="letter" href="A">A</a>
+                    <a class="letter" href="B">B</a>
+                    <a class="letter" href="C">C</a>
+                    <a class="letter" href="D">D</a>
+                    <a class="letter" href="E">E</a>
+                    <a class="letter" href="F">F</a>
+                    <a class="letter" href="G">G</a>
+                    <a class="letter" href="H">H</a>
+                    <a class="letter" href="I">I</a>
+                    <a class="letter" href="J">J</a>
+                    <a class="letter" href="K">K</a>
+                    <a class="letter" href="L">L</a>
+                    <a class="letter" href="M">M</a>
+                    <a class="letter" href="N">N</a>
+                    <a class="letter" href="O">O</a>
+                    <a class="letter" href="P">P</a>
+                    <a class="letter" href="Q">Q</a>
+                    <a class="letter" href="R">R</a>
+                    <a class="letter" href="S">S</a>
+                    <a class="letter" href="T">T</a>
+                    <a class="letter" href="U">U</a>
+                    <a class="letter" href="V">V</a>
+                    <a class="letter" href="W">W</a>
+                    <a class="letter" href="X">X</a>
+                    <a class="letter" href="Y">Y</a>
+                    <a class="letter" href="Z">Z</a>
+                    <a class="topnav-right">
+                    <form action="">
+                        <input type="text" style="float: left;" placeholder="SEARCH. . ." name="search">
+                            <button type="submit" style="background: white;">SUBMIT</button>
+                   </form></a>
+                </div>
+            </tr>
+        </thead>
+    </table>
+    <table class="table table-bordered table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>
+                    Product Name
+                </th>
+                <th>Product Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model)
+            {
+                <tr>
+                    <td wi
+                        dth="20">
+                        @obj.Id
+                    </td>
+                    <td width="50%">
+                        @obj.ProductName
+                    </td>
+                    <td width="30%">
+                        @obj.ProductDescription
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</body>
+
+
+
+
